@@ -1,31 +1,24 @@
 #include <iostream>
-#include <string>
-#include <sstream>
+using namespace std;
 
-int countWords(const std::string& sentence) {
-    std::istringstream iss(sentence);
-    int count = 0;
-    std::string word;
+int main()
+{
 
-    while (iss >> word) {
-        count++;
-    }
+char str[80];
+int count = 1;
+cout << "Enter the string:";
+cin.getline(str, 80);
+for (int i = 0; i < 80; i++)
 
-    return count;
+{
+
+if (str[i] == ' ')
+{
+count++;
 }
 
-int main() {
-    std::string sentence;
-    std::cout << "Enter a sentence (up to 80 characters): ";
-    std::getline(std::cin, sentence);
+}
+cout << "The number of words in the string is:" << count;
 
-    // Truncate the sentence to 80 characters if it exceeds
-    if (sentence.length() > 80) {
-        sentence = sentence.substr(0, 80);
-    }
-
-    int wordCount = countWords(sentence);
-    std::cout << "Number of words in the sentence: " << wordCount << std::endl;
-
-    return 0;
+return 0;
 }
